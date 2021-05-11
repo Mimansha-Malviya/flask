@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>user dashboard</title>
+	<!--css link for badge of cart-->
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<!--bootstrap links-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!--fontawesome link-->
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<script type="text/javascript">
+	/*function wishList(){
+    var list = document.getElementById("toast");
+  list.classList.add("show");
+  list.innerHTML = '<i class="far fa-heart wish"></i> Product added to List';
+  setTimeout(function(){
+    list.classList.remove("show");
+  },3000);
+}*/
+
+function addCart(){
+      var cart = document.getElementById("toast-cart");
+  cart.classList.add("show");
+  cart.innerHTML = '<i class="fas fa-shopping-cart cart"></i> Product added to cart';
+  setTimeout(function(){
+    cart.classList.remove("show");
+  }, 3000);
+}
+$(document).ready(function() {
+    
+  $('[data-toggle=offcanvas]').click(function() {
+    $('.row-offcanvas').toggleClass('active');
+  });
+  
+});
+</script>
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap');
+
+body{
+  background-color: #DFE7EF;
+}
+
+.container{
+  margin-top: 50px;
+}
+
+h1, .card-title, a, #toast{
+  font-family: 'Roboto', sans-serif;
+}
+
+h1{
+  color: #5C7CFA;
+}
+
+.card{
+  box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
+  border-radius: 15px;
+  transition: transform .2s;
+}
+
+.card-body{
+  padding: 10px;
+  margin-top: -50px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease-in-out;
+}
+
+.heart{
+  color: #989898;
+  margin-top: 15px;
+  margin-left: 230px;
+  font-size: 30px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  padding: 0px;
+  text-align: center;
+}
+
+.heart-active{
+  color: #C50707;
+}
+
+.heart:hover{
+  color: red;
+  background-color: #f9f9f9;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease-in-out;
+}
+
+.card-body a{
+  visibility: hidden;
+}
+
+.card:hover > .card-body{
+  margin-top: -0px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.card:hover{
+  transform: scale(1.02);
+}
+
+.card:hover > .card-body > a{
+  visibility: visible;
+}
+
+.first-image{
+  width: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.cart, .wish{
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+  margin-left: -24px;
+  margin-top: 0px;
+  margin-right: 3px;
+  background-color: #fff;
+  color: #5C7CFA;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  text-align: center;
+  -ms-display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wish{
+  color: #C50707;
+}
+
+#toast, #toast-cart{
+  padding: 10px;
+  padding-left: 5px;
+  position: fixed;
+  width: 230px;
+  height: 50px;
+  top: 0;
+  left: 80%;
+  transform:translate(-50%);
+  background-color: #EFF2FF;
+  color: #76777E;
+  padding: 1px;
+  border-radius: 8px;
+  text-align:center;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  visibility: hidden;
+  opacity: 0;
+  -ms-display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+#toast.show, #toast-cart.show{
+  visibility:visible;
+  animation:fadeInOut 3s;
+}
+
+@keyframes fadeInOut{
+  5%,95%{opacity:1;top:50px}
+  15%,85%{opacity:1;top:30px}
+}
+
+a{
+  z-index: -1;
+}
+	
+</style>
+
+</head>
+<body>
+	<nav class="navbar fixed-top navbar-expand-md navbar-dark bg-primary mb-3">
+    <div class="flex-row d-flex">
+        <button type="button" class="navbar-toggler mr-2 " data-toggle="offcanvas" title="Toggle responsive left sidebar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand mb-0 h1"  title="user">hello {{uname}}</a>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="collapsingNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">Home</span></a>
+            </li>
+            <!--<li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>-->
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#myAlert" data-toggle="collapse">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="" data-target="#myModal" data-toggle="modal">Contact Us</a>
+            </li>
+        </ul>
+         <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-warning my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    </div>
+</nav>
+<div class="container-fluid" id="main">
+    <div class="row row-offcanvas row-offcanvas-left">
+        <div class="col-md-3 col-lg-2 sidebar-offcanvas bg-light pl-0" id="sidebar" role="navigation">
+            <ul class="nav flex-column sticky-top pl-0 pt-5 mt-3">
+                <li class="nav-item"><a class="nav-link" href="/sell_book">Sell Books</a></li>
+                <!--<li class="nav-item">
+                    <a class="nav-link" href="#submenu1" data-toggle="collapse" data-target="submenu1">Category▾</a>
+                    <ul class="list-unstyled flex-column pl-3 collapse" id="submenu1" aria-expanded="false">
+                       <li class="nav-item"><a class="nav-link" href="">Educational</a></li>
+                       <li class="nav-item"><a class="nav-link" href="">Comic</a></li>
+                    </ul>
+                </li>-->
+                <li class="nav-item">
+                    <a class="nav-link" href="#submenu1" data-toggle="collapse" data-target="#submenu1">Category▾</a>
+                    <ul class="list-unstyled flex-column pl-3 collapse" id="submenu1" aria-expanded="false">
+                       <li class="nav-item"><a class="nav-link" href="">Educational</a></li>
+                       <li class="nav-item"><a class="nav-link" href="">Comic</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="mybooks.html">My Books</a></li>
+                <li class="nav-item"><a class="nav-link " href="#">Order Requests<span class="w3-badge w3-small w3-red">0</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Cart<span class="w3-badge w3-green">0</span></a></li>
+                <li class="nav-item"><a class="nav-link" href="#">My Order Summary</a></li>
+                <li class="nav-item"><a class="nav-link" href="/show_ac_info">My Account</a></li>
+                <!--<li class="nav-item"><a class="nav-link" href="#">Layouts</a></li>-->
+                
+                <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </div>
+        <div class="col main pt-5 mt-3">
+<div id="toast"></div>
+<div id="toast-cart"></div>
+<div class="container">
+  <h1>Explore!..</h1>
+  <hr>
+  <br>
+  {% block content %}
+  {% for b in books %}
+
+  <div class="row">
+  <div class="col-lg-4">
+    <div class="card" style="width: 18rem;">
+      <!--<span id="heart" class="heart"><i onclick="wishList()" class="fas fa-heart"></i></span>-->
+  <img src="{{b['b_img'].decode()}}" class="first-image">
+  <div class="card-body">
+    <a href="#" onclick="addCart()"><center>Add to cart</center></a>
+    <hr>
+    <center>
+      <h5 class="card-title">&#8377;{{b['price']}}</h5>
+      <h5 class="card-title">{{b['title']}}</h5>
+      <p>{{b['lang']}}<br>
+        {{b['condn']}}<br>
+      {{b['description']}}</p>
+
+    </center>
+  </div>
+</div>
+</div>
+      <!--<div class="col-lg-4">
+    <div class="card" style="width: 18rem;">
+      <span id="heart-second" value="So" class="heart"><i onclick="wishList()" class="fas fa-heart"></i></span>
+  <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/action-thriller-book-cover-design-template-3675ae3e3ac7ee095fc793ab61b812cc_screen.jpg?ts=1588152105" class="first-image">
+  <div class="card-body">
+    <a href="#" onclick="addCart()"><center>Add to cart</center></a>
+    <hr>
+    <center>
+      <h5 class="card-title">250/-</h5>
+    </center>
+  </div>
+</div>
+</div>
+    <div class="col-lg-4">
+    <div class="card" style="width: 18rem;">
+      <span id="heart-third" class="heart"><i onclick="wishList()" class="fas fa-heart"></i></span>
+  <img src="https://marketplace.canva.com/EAD7YH8bebE/1/0/251w/canva-white-bold-text-thriller-mystery-book-cover-CejxvxrTCyg.jpg" class="first-image">
+  <div class="card-body">
+    <a href="#" onclick="addCart()"><center>Add to cart</center></a>
+    <hr>
+    <center>
+      <h5 class="card-title">Don't Go There</h5>
+      <p>mystery<br>
+      good condn
+  </p>
+    </center>
+  </div>
+</div>
+</div>
+  </div>-->
+</div>
+{% endfor %}
+{% endblock %}
+</div>
+</body>
+</html>

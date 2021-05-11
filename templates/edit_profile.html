@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>edit profile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script type="text/javascript">
+   
+function myFunction() {
+  alert("changes saved");
+}
+</script>
+  </script>
+  <style type="text/css">
+    body{
+      background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190622/ourmid/pngtree-cartoon-3d-e-commerce-background-download-image_228964.jpg");
+      background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+    }
+    @media (min-width: 1200px) {
+    .container{
+        max-width: 670px;
+    }
+}
+  	.container{
+      background-color: grey;
+
+    border:3px solid black;
+    box-shadow: 10px 10px 8px #888888;
+    padding:40px;
+    
+    }
+    .area{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+	<nav  style="background-color: #E8E8f8"class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a   class="navbar-brand  " href="my_ac.html"><i style="color: black"class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    </div>
+</nav>
+
+ <form style="text-align: center;" action="#" class="area"  method="POST">
+    <div class="h1">
+      <h1>EDIT PROFILE</h1>
+    </div>
+    <div class="container" >
+    <input class="input-parts" type="text" name="username" placeholder="Username" autocomplete="off">
+    <span><input class="input-parts" type="tel" name="contact" placeholder="contact"><br><br></span>
+    <span><input class="input-parts" type="e-mail" name="E-Mail" placeholder="E-Mail">
+     <input class="input-parts" type="text" name="add" placeholder="Address"><br><br></span>
+    <span> <input class="input-parts" type="text" name="city" placeholder="City">
+      <input class="input-parts" type="text" name="state" placeholder="state"><br><br></span>
+     <span> <input class="input-parts" type="text" name="pin" placeholder="Pincode">
+
+
+    <input class="input-parts" type="password" name="Pass" placeholder="Password" maxlenght="8"><br><br>
+    <input class="input-parts" type="password" name="ConfirmPass" placeholder="Confirm Password" maxlenght="8"><br><br></span>
+    <button  href="my_ac.html" class="btn btn-default" >cancel</button>
+    <input class="btn btn-primary" onclick="myFunction()" type="submit" value="save changes">
+</div>
+  </form>
+
+
+</body>
+</html>

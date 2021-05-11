@@ -1,0 +1,160 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>sell books</title>
+    <!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+   
+   <script type="text/javascript">
+    function myFunction() {
+
+  alert("book Added");
+  
+
+}
+    /* document.getElementById('b3').onclick = function(){
+  swal("Book Added", "success");
+};*/
+   </script>
+  
+    <style type="text/css">
+        body{
+            background:radial-gradient(#eeaeca, #94bbe9); 
+            
+        }
+       
+       /* #box {
+  box-sizing: content-box;  
+  width: 
+  height: 
+  padding: 30px;  
+  border: 10px solid black;
+}*/
+    </style>
+  </head>
+  <body>
+    <nav  style="background-color: #E8E8E8"class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a  style="color: black" class="navbar-brand" href="#"></strong>BOOKS BUY N SELL!</strong></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/sign_in">Home</a></li>
+      
+     
+    
+  </div>
+</nav>
+    <div class="container" align="center" id="box">
+          <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6  column col-sm-offset-0 col-md-offset-2 col-lg-offset-3">
+          <form action="add_book" class="form-horizontal" method="POST">
+            <fieldset>
+
+            <!-- Form Name -->
+            <h1><strong>ADD BOOKS</strong></h1><br>
+            <!-- Text input-->
+            <div class="form-group"   >
+              <label class="col-md-3 control-label" for="sid" >seller ID</label>  
+              <div class="col-md-3">
+                <input  id="title" name="sid" type="text" placeholder="" class="form-control input-md">
+              </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="title" >Title</label>  
+              <div class="col-md-3">
+                <input  id="title" name="title" type="text" placeholder="" class="form-control input-md">
+              </div>
+              <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="author">Author Name</label>  
+              <div class="col-md-3">
+                <input id="Author" name="author" type="text" placeholder="" class="form-control input-md">
+              </div><br><br>
+
+              <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="price">Set Price</label>  
+              <div class="col-md-3">
+                <input id="Price" name="price" type="text" placeholder="" class="form-control input-md">
+              </div><br><br>
+               <!--select-->
+               <div class="form-group">
+              <label class="col-md-3 control-label" for="category">Book Category</label>
+              <div class="col-md-4">
+                <select id="Category" name="category" class="form-control">
+                  <option value="Educational">Educational</option>
+                  <option value="comic">Comic</option>
+                  
+                </select>
+              </div>
+            </div><br>
+
+              <!--select-->
+               <div class="form-group">
+              <label class="col-md-3 control-label" for="Language">Book Language</label>
+              <div class="col-md-4">
+                <select id="Language" name="lang" class="form-control">
+                  <option value="English">English</option>
+                  <option value="Hindi">Hindi</option>
+                 
+                </select>
+              </div>
+            </div><br>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="condn">Book Condition</label>
+              <div class="col-md-4">
+                <select id="condition" name="condn" class="form-control">
+                  <option value="excellent">excellent</option>
+                  <option value="Average">Average</option>
+                  <option value="Poor">Poor</option>
+                </select>
+              </div>
+            </div>
+
+
+            
+
+
+  
+  <!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-3 control-label" for="textarea">Description</label>
+  <div class="col-md-9">                     
+    <textarea class="form-control" id="textarea" name="description"></textarea>
+  </div>
+</div><br>
+<div class="form-group">
+              <label class="col-md-4 control-label" for="Add Book Image">Add Book Image</label>  
+              <div class="col-md-4">
+                
+<input class="input-parts" type="file" name="b_img" placeholder="upload book image"><br>
+</div><br><br>
+ <input class="btn btn-primary" onclick="myFunction()" type="submit" value="Add">
+ 
+     <a href="/sign_in" class="btn btn-Danger">Cancel</a>
+ 
+
+<!-- Button (Double) -->
+
+
+</fieldset>
+</form>
+        </div>
+        
+    </div>
+</div>
+         
+
+        
+
+
+
+    </body>
+</html>
